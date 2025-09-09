@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 300 wsgi:app
+web: gunicorn --bind 0.0.0.0:$PORT --workers 1 --worker-class sync --timeout 300 --keep-alive 60 --preload wsgi:application
