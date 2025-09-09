@@ -1,0 +1,691 @@
+/**
+ * Responsive Design Extensions
+ * Mobile-first responsive design enhancements
+ */
+
+/* ==========================================================================
+   MOBILE FIRST - BASE RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Typography adjustments */
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-description {
+    font-size: 1rem !important;
+  }
+  
+  /* Layout adjustments */
+  .container {
+    padding: 0 1rem !important;
+  }
+  
+  /* Navigation */
+  .nav-container {
+    padding: 0 1rem !important;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-lg);
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+    z-index: 1000;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(-100%);
+  }
+  
+  /* Hero section */
+  .hero-content {
+    padding: 8rem 0 4rem 0 !important;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Features grid */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  
+  /* Upload area */
+  .upload-area {
+    padding: 3rem 1rem !important;
+  }
+  
+  .upload-limits {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Dashboard grid */
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Contact form */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  
+  /* Modal adjustments */
+  .modal-content {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  /* Results grid */
+  .results-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* File queue adjustments */
+  .queue-item-content {
+    flex-wrap: wrap;
+  }
+  
+  .queue-item-details {
+    min-width: 100%;
+    order: 3;
+  }
+  
+  .queue-item-status {
+    order: 2;
+  }
+  
+  /* Activity items */
+  .activity-item {
+    flex-wrap: wrap;
+  }
+  
+  .activity-details {
+    min-width: 100%;
+    order: 3;
+  }
+  
+  /* Accessibility toolbar */
+  .accessibility-toolbar {
+    bottom: 20px !important;
+    top: auto !important;
+  }
+  
+  .toolbar-panel {
+    bottom: 60px !important;
+    top: auto !important;
+    left: -200px !important;
+    right: 0 !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE UTILITIES
+   ========================================================================== */
+
+/* Show/hide utilities for different screen sizes */
+.show-mobile { display: none !important; }
+.show-tablet { display: none !important; }
+.show-desktop { display: block !important; }
+
+@media (max-width: 767.98px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: block !important; }
+  .show-mobile-flex { display: flex !important; }
+  .show-mobile-inline { display: inline !important; }
+  .show-mobile-inline-block { display: inline-block !important; }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hide-tablet { display: none !important; }
+  .show-tablet { display: block !important; }
+  .show-tablet-flex { display: flex !important; }
+  .show-tablet-inline { display: inline !important; }
+  .show-tablet-inline-block { display: inline-block !important; }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop { display: none !important; }
+  .show-desktop { display: block !important; }
+  .show-desktop-flex { display: flex !important; }
+  .show-desktop-inline { display: inline !important; }
+  .show-desktop-inline-block { display: inline-block !important; }
+}
+
+/* ==========================================================================
+   RESPONSIVE SPACING
+   ========================================================================== */
+
+/* Mobile spacing adjustments */
+@media (max-width: 767.98px) {
+  .features,
+  .analysis,
+  .dashboard,
+  .contact {
+    padding: 4rem 0 !important;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem !important;
+  }
+  
+  /* Reduce padding in cards */
+  .feature-card,
+  .dashboard-card {
+    padding: 1.5rem !important;
+  }
+  
+  .card-header,
+  .card-content {
+    padding: 1rem !important;
+  }
+  
+  /* Form spacing */
+  .form {
+    gap: 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE IMAGES
+   ========================================================================== */
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive background images */
+.hero-background {
+  background-attachment: scroll; /* Fix for mobile */
+}
+
+@media (max-width: 767.98px) {
+  .hero-background {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* ==========================================================================
+   TOUCH OPTIMIZATIONS
+   ========================================================================== */
+
+/* Larger touch targets for mobile */
+@media (max-width: 767.98px) {
+  .btn {
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .nav-link {
+    padding: 1rem 0;
+    font-size: 1.125rem;
+  }
+  
+  /* Larger form inputs */
+  .form-input,
+  .form-textarea {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Larger checkbox targets */
+  .checkbox {
+    padding: 0.5rem 0;
+  }
+  
+  .checkmark {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE TABLES
+   ========================================================================== */
+
+/* Responsive table styles */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767.98px) {
+  .table-responsive table {
+    min-width: 600px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE MODALS
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  .modal {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    max-height: calc(100vh - 2rem);
+    margin: 0;
+  }
+  
+  .modal-header,
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE NOTIFICATIONS
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  .notification-container {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+    max-width: none;
+  }
+  
+  .notification {
+    padding: 1rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE LOADING OVERLAY
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  .loading-content {
+    padding: 2rem;
+  }
+  
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .loading-text {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================================
+   HIGH DPI DISPLAYS
+   ========================================================================== */
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Higher quality shadows and borders */
+  .card,
+  .btn,
+  .form-input,
+  .form-textarea {
+    border-width: 0.5px;
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  .header,
+  .nav-menu,
+  .hero,
+  .accessibility-toolbar,
+  .notification-container,
+  .loading-overlay,
+  .modal,
+  .btn,
+  .footer {
+    display: none !important;
+  }
+  
+  /* Optimize for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    color: black;
+  }
+  
+  .section-title {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+  
+  .result-card {
+    break-inside: avoid;
+    border: 1pt solid black;
+    margin-bottom: 12pt;
+    padding: 12pt;
+  }
+  
+  /* Show URLs in links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT (if browser supports)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #1a1a1a;
+    --gray-50: #2d2d2d;
+    --gray-100: #3a3a3a;
+    --gray-200: #4a4a4a;
+    --gray-300: #5a5a5a;
+    --gray-400: #6a6a6a;
+    --gray-500: #8a8a8a;
+    --gray-600: #9a9a9a;
+    --gray-700: #bbb;
+    --gray-800: #ccc;
+    --gray-900: #fff;
+  }
+  
+  body {
+    background-color: var(--white);
+    color: var(--gray-800);
+  }
+  
+  .header {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom-color: var(--gray-200);
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION PREFERENCES
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Remove parallax effects */
+  .hero-background {
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   HIGH CONTRAST PREFERENCES
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0000ff;
+    --primary-dark: #000080;
+    --success-color: #008000;
+    --error-color: #ff0000;
+    --warning-color: #ff8000;
+  }
+  
+  .btn-primary {
+    background: #000080;
+    border-color: #000080;
+    color: #ffffff;
+  }
+  
+  .btn-outline {
+    border: 2px solid #000080;
+    color: #000080;
+  }
+  
+  /* Higher contrast borders and shadows */
+  .card,
+  .form-input,
+  .form-textarea {
+    border: 2px solid #000000;
+  }
+}
+
+/* ==========================================================================
+   LANDSCAPE ORIENTATION ADJUSTMENTS
+   ========================================================================== */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  /* Reduce hero height on short landscape screens */
+  .hero {
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  
+  .hero-content {
+    padding: 2rem 0;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE FONT SCALING
+   ========================================================================== */
+
+/* Fluid typography */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* ==========================================================================
+   CONTAINER QUERIES (Future-proofing)
+   ========================================================================== */
+
+/* When container queries are widely supported, these can be uncommented */
+/*
+@container (max-width: 400px) {
+  .feature-card {
+    padding: 1rem;
+  }
+  
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+}
+*/
+
+/* ==========================================================================
+   FOCUS MANAGEMENT FOR MOBILE
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  /* Larger focus indicators for touch screens */
+  *:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+  }
+  
+  /* Reduce focus outline for non-interactive elements */
+  div:focus,
+  span:focus,
+  p:focus {
+    outline: 1px solid var(--primary-color);
+    outline-offset: 1px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE ANIMATIONS
+   ========================================================================== */
+
+/* Disable complex animations on mobile for performance */
+@media (max-width: 767.98px) {
+  .card:hover,
+  .btn:hover,
+  .feature-card:hover {
+    transform: none;
+  }
+  
+  /* Keep only essential animations */
+  .notification {
+    animation: none;
+  }
+  
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+  }
+}
+
+/* ==========================================================================
+   SAFE AREA ADJUSTMENTS (iOS notch support)
+   ========================================================================== */
+
+@supports (padding-top: env(safe-area-inset-top)) {
+  .header {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .hero-content {
+    padding-top: calc(8rem + env(safe-area-inset-top));
+  }
+  
+  .accessibility-toolbar {
+    top: calc(20px + env(safe-area-inset-top));
+    right: calc(20px + env(safe-area-inset-right));
+  }
+}

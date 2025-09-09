@@ -262,3 +262,55 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload
 2025-09-09 10:55:45,623 [INFO] __main__: Response 200 for POST /api/analyze
 2025-09-09 10:55:45,624 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:45] "POST /api/analyze HTTP/1.1" 200 -
 2025-09-09 10:55:45,655 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:45] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 12:28:55,395 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 12:28:55] "GET / HTTP/1.1" 200 -
+2025-09-09 12:28:55,462 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 12:28:55] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-09-09 12:28:55,465 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 12:28:55] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 13:08:05,096 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:05] "GET / HTTP/1.1" 200 -
+2025-09-09 13:08:05,165 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:05] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-09-09 13:08:05,170 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:05] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 13:08:07,123 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:07] "GET /upload HTTP/1.1" 200 -
+2025-09-09 13:08:07,186 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:07] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-09-09 13:08:07,191 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:07] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 13:08:08,748 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:08] "GET /about HTTP/1.1" 200 -
+2025-09-09 13:08:08,811 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:08] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-09-09 13:08:08,815 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:08:08] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 13:14:28,346 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:14:28] "GET / HTTP/1.1" 200 -
+2025-09-09 13:14:28,401 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:14:28] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+2025-09-09 13:14:28,406 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 13:14:28] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 14:11:07,184 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:11:07] "GET / HTTP/1.1" 200 -
+2025-09-09 14:11:07,207 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:11:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-09 14:11:07,208 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:11:07] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 14:12:58,209 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:12:58] "GET /upload HTTP/1.1" 200 -
+2025-09-09 14:12:58,227 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:12:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 14:12:58,228 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:12:58] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 14:13:12,479 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 14:13:12,483 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 14:13:12,484 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:13:12] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 14:13:12,505 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:13:12] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 14:26:24,382 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 14:26:24,383 [INFO] src.api.routes: Analysis completed for walpaper.jpg in 0.00s
+2025-09-09 14:26:24,384 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 14:26:24,384 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:24] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 14:26:24,395 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:24] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 14:26:34,354 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:34] "GET / HTTP/1.1" 200 -
+2025-09-09 14:26:34,610 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:34] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-09 14:26:34,682 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:34] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 14:26:42,640 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:42] "GET /upload HTTP/1.1" 200 -
+2025-09-09 14:26:42,959 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 14:26:42,961 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:42] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 14:26:54,865 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 14:26:54,866 [INFO] src.api.routes: Analysis completed for walpaper.jpg in 0.00s
+2025-09-09 14:26:54,866 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 14:26:54,867 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:54] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 14:26:55,193 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 14:26:55] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 15:01:42,787 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:01:42] "GET / HTTP/1.1" 200 -
+2025-09-09 15:01:43,030 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:01:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 15:01:43,169 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:01:43] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 15:08:18,363 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:08:18] "GET /upload HTTP/1.1" 200 -
+2025-09-09 15:08:18,620 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:08:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 15:08:18,731 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:08:18] "[33mGET /static/js/main.js HTTP/1.1[0m" 404 -
+2025-09-09 15:08:43,905 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 15:08:44,056 [INFO] src.api.routes: Analysis completed for os poster.png in 0.00s
+2025-09-09 15:08:44,058 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 15:08:44,061 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:08:44] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 15:08:44,425 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 15:08:44] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
