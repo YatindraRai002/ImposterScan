@@ -107,22 +107,27 @@ if __name__ == '__main__':
     print("TEMPLATE AND STATIC DIRECTORIES CONFIGURED")
     print()
     print("SERVER STARTING...")
-    print("   Go to: http://localhost:5000")
-    print("   Test static files: http://localhost:5000/static/js/accessibility.js")
+    
+    # Get port from environment variable (Railway sets PORT)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"   Running on port: {port}")
+    print(f"   Test static files: /static/js/accessibility.js")
     print()
     print("Press Ctrl+C to stop the server")
     print("="*60)
     print()
     
     try:
-        app.run(debug=True, host='0.0.0.0', port=5000)
+        # For production deployment (Railway), don't use debug mode
+        debug_mode = os.environ.get('RAILWAY_ENVIRONMENT_NAME') is None
+        app.run(debug=debug_mode, host='0.0.0.0', port=port)
     except Exception as e:
-        print(f"Error starting on port 5000: {e}")
+        print(f"Error starting on port {port}: {e}")
         try:
-            app.run(debug=True, host='0.0.0.0', port=8000)
+            app.run(debug=False, host='0.0.0.0', port=8000)
         except Exception as e2:
             print(f"Error starting on port 8000: {e2}")
-            app.run(debug=True, host='0.0.0.0', port=3000)
+            app.run(debug=False, host='0.0.0.0', port=3000)
 
 
 
