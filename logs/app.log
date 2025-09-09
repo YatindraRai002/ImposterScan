@@ -1,0 +1,264 @@
+2025-09-09 09:46:31,578 [INFO] app: Flask app created with config: development
+2025-09-09 09:50:37,125 [INFO] __main__: Flask app created with config: development
+2025-09-09 09:50:37,128 [INFO] __main__: Starting development server on 127.0.0.1:5000 (debug=False)
+2025-09-09 09:50:37,153 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-09 09:50:37,154 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-09-09 09:51:13,458 [ERROR] app: Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\api\routes.py", line 31, in index
+    return render_template('index.html')
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\base.html", line 66, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 19, in block 'content'
+    <a href="{{ url_for('upload') }}" class="btn btn-light btn-lg">
+    ^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload'. Did you mean 'main.upload' instead?
+2025-09-09 09:51:13,470 [ERROR] __main__: Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-09-09 09:51:13,473 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:51:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-09 09:51:54,961 [ERROR] app: Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\api\routes.py", line 31, in index
+    return render_template('index.html')
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\base.html", line 66, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 19, in block 'content'
+    <a href="{{ url_for('upload') }}" class="btn btn-light btn-lg">
+    ^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload'. Did you mean 'main.upload' instead?
+2025-09-09 09:51:54,971 [ERROR] __main__: Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-09-09 09:51:54,973 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:51:54] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-09 09:51:56,346 [ERROR] app: Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\api\routes.py", line 31, in index
+    return render_template('index.html')
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\base.html", line 66, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\OneDrive\Desktop\Deep-Fake-Fraud-Detection\src\frontend\templates\index.html", line 19, in block 'content'
+    <a href="{{ url_for('upload') }}" class="btn btn-light btn-lg">
+    ^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python313\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'upload'. Did you mean 'main.upload' instead?
+2025-09-09 09:51:56,354 [ERROR] __main__: Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-09-09 09:51:56,355 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:51:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-09-09 09:55:13,092 [INFO] __main__: Flask app created with config: development
+2025-09-09 09:55:13,094 [INFO] __main__: Starting development server on 127.0.0.1:5000 (debug=False)
+2025-09-09 09:55:13,120 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-09 09:55:13,121 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-09-09 09:55:40,525 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:40] "GET / HTTP/1.1" 200 -
+2025-09-09 09:55:41,224 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 09:55:41,412 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 09:55:46,733 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:46] "GET /upload HTTP/1.1" 200 -
+2025-09-09 09:55:46,973 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 09:55:47,129 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:55:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 09:56:02,003 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 09:56:02,009 [ERROR] src.api.routes: Error in analyze_media: [WinError 6] The handle is invalid: 87872
+2025-09-09 09:56:02,010 [INFO] __main__: Response 500 for POST /api/analyze
+2025-09-09 09:56:02,011 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:56:02] "[35m[1mPOST /api/analyze HTTP/1.1[0m" 500 -
+2025-09-09 09:56:08,788 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 09:56:08,793 [ERROR] src.api.routes: Error in analyze_media: [WinError 6] The handle is invalid: 87872
+2025-09-09 09:56:08,794 [INFO] __main__: Response 500 for POST /api/analyze
+2025-09-09 09:56:08,795 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:56:08] "[35m[1mPOST /api/analyze HTTP/1.1[0m" 500 -
+2025-09-09 09:56:13,186 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 09:56:13,192 [ERROR] src.api.routes: Error in analyze_media: [WinError 6] The handle is invalid: 87872
+2025-09-09 09:56:13,193 [INFO] __main__: Response 500 for POST /api/analyze
+2025-09-09 09:56:13,194 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 09:56:13] "[35m[1mPOST /api/analyze HTTP/1.1[0m" 500 -
+2025-09-09 09:59:59,262 [INFO] __main__: Flask app created with config: development
+2025-09-09 09:59:59,263 [INFO] __main__: Starting development server on 127.0.0.1:5000 (debug=False)
+2025-09-09 09:59:59,288 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-09 09:59:59,288 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-09-09 10:00:22,748 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:00:22,752 [INFO] __main__: Response 400 for POST /api/analyze
+2025-09-09 10:00:22,755 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:00:22] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+2025-09-09 10:01:09,115 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:09] "GET / HTTP/1.1" 200 -
+2025-09-09 10:01:09,465 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:01:09,488 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:01:13,923 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:13] "GET /upload HTTP/1.1" 200 -
+2025-09-09 10:01:14,305 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:01:14,309 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:01:24,615 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:01:24,643 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:01:24,645 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:24] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:01:25,095 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:25] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:01:39,541 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:01:39,551 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:01:39,553 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:39] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:01:39,872 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:39] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:01:52,573 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:01:52,585 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:01:52,587 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:52] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:01:52,914 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:01:52] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:02:07,057 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:02:07,314 [INFO] src.api.routes: Analysis completed for tr.mp4 in 0.00s
+2025-09-09 10:02:07,317 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:02:07,321 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:02:07] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:02:19,624 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:02:19] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:10:06,166 [INFO] __main__: Flask app created with config: development
+2025-09-09 10:10:06,167 [INFO] __main__: Starting development server on 127.0.0.1:5000 (debug=False)
+2025-09-09 10:10:06,190 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-09 10:10:06,190 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-09-09 10:11:00,996 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:00] "GET / HTTP/1.1" 200 -
+2025-09-09 10:11:01,858 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:11:01,997 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:11:05,925 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:05] "GET /upload HTTP/1.1" 200 -
+2025-09-09 10:11:06,175 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:11:06,306 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:11:17,274 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:11:17,550 [INFO] src.api.routes: Analysis completed for Gemini_Generated_Image_spc2i5spc2i5spc2 (1).png in 0.00s
+2025-09-09 10:11:17,554 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:11:17,560 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:17] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:11:18,042 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:18] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:11:31,167 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:11:31,842 [INFO] src.api.routes: Analysis completed for Recording 2025-09-03 222236.mp4 in 0.00s
+2025-09-09 10:11:31,848 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:11:31,858 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:31] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:11:32,224 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:32] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:11:54,114 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:11:54,569 [INFO] src.api.routes: Analysis completed for Recording 2025-09-03 222236.mp4 in 0.00s
+2025-09-09 10:11:54,574 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:11:54,583 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:54] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:11:54,932 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:11:54] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:15:07,391 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:07] "GET / HTTP/1.1" 200 -
+2025-09-09 10:15:08,064 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:15:08,369 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:15:13,330 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:13] "GET /upload HTTP/1.1" 200 -
+2025-09-09 10:15:13,597 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:15:13,722 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:15:29,242 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:15:29,249 [INFO] __main__: Response 400 for POST /api/analyze
+2025-09-09 10:15:29,251 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:29] "[31m[1mPOST /api/analyze HTTP/1.1[0m" 400 -
+2025-09-09 10:15:45,388 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:15:45,407 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:15:45,409 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:45] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:15:45,671 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:15:45] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:33:42,559 [INFO] __main__: Flask app created with config: development
+2025-09-09 10:33:42,560 [INFO] __main__: Starting development server on 127.0.0.1:5000 (debug=False)
+2025-09-09 10:33:42,575 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-09 10:33:42,576 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-09-09 10:36:02,094 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:02] "GET / HTTP/1.1" 200 -
+2025-09-09 10:36:02,363 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:02] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-09 10:36:02,414 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:36:08,235 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:08] "GET /about HTTP/1.1" 200 -
+2025-09-09 10:36:08,565 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:36:08,566 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:36:23,619 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:23] "GET /upload HTTP/1.1" 200 -
+2025-09-09 10:36:23,953 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:36:23,955 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:36:44,516 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:36:44,559 [INFO] src.api.routes: Analysis completed for Gemini_Generated_Image_spc2i5spc2i5spc2 (1).png in 0.00s
+2025-09-09 10:36:44,560 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:36:44,562 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:44] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:36:44,894 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:36:44] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
+2025-09-09 10:37:51,104 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:37:51] "GET / HTTP/1.1" 200 -
+2025-09-09 10:37:51,377 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:37:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:37:51,433 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:37:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:55:24,450 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:24] "GET / HTTP/1.1" 200 -
+2025-09-09 10:55:24,474 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-09 10:55:24,474 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-09-09 10:55:25,188 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-09 10:55:35,674 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:35] "GET /upload HTTP/1.1" 200 -
+2025-09-09 10:55:35,695 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-09 10:55:35,697 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-09-09 10:55:45,619 [INFO] __main__: POST /api/analyze from 127.0.0.1
+2025-09-09 10:55:45,623 [INFO] __main__: Response 200 for POST /api/analyze
+2025-09-09 10:55:45,624 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:45] "POST /api/analyze HTTP/1.1" 200 -
+2025-09-09 10:55:45,655 [INFO] werkzeug: 127.0.0.1 - - [09/Sep/2025 10:55:45] "[33mGET /uploads/undefined HTTP/1.1[0m" 404 -
