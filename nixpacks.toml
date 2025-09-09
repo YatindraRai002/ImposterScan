@@ -1,0 +1,22 @@
+[build]
+aptPkgs = [
+  "python3-dev",
+  "python3-pip",
+  "build-essential",
+  "cmake",
+  "pkg-config",
+  "libavformat-dev",
+  "libavcodec-dev", 
+  "libavdevice-dev",
+  "libavutil-dev",
+  "libswscale-dev",
+  "libswresample-dev",
+  "libavfilter-dev"
+]
+
+[variables]
+PIP_NO_CACHE_DIR = "1"
+PYTHONUNBUFFERED = "1"
+
+[start]
+cmd = "gunicorn --bind 0.0.0.0:$PORT --workers 1 --worker-class sync --timeout 300 --keep-alive 60 --max-requests 1000 --preload wsgi:app"

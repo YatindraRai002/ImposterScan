@@ -7,7 +7,17 @@ Serves static files properly from src/frontend/static/
 from flask import Flask, render_template, send_from_directory, jsonify
 from flask_cors import CORS
 import os
+import logging
+import sys
 from datetime import datetime
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 # Initialize Flask app with correct template and static folders
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -88,15 +98,44 @@ def debug_static():
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
-    """Health check endpoint"""
-    return jsonify({
-        'status': 'healthy',
-        'message': 'Static file serving is now working!',
-        'timestamp': datetime.now().isoformat(),
-        'static_files_working': True,
-        'version': '2.0.0-static-fixed',
-        'server': 'Flask/DeepFake Detection API'
-    })
+    """Enhanced health check endpoint for Railway"""
+    try:
+        # Check static directory
+        static_accessible = os.path.exists(static_dir)
+        
+        # Check template directory  
+        template_accessible = os.path.exists(template_dir)
+        
+        # Overall health status
+        is_healthy = static_accessible and template_accessible
+        
+        health_data = {
+            'status': 'healthy' if is_healthy else 'unhealthy',
+            'message': 'DeepFake Detection API is running',
+            'timestamp': datetime.now().isoformat(),
+            'environment': os.environ.get('RAILWAY_ENVIRONMENT_NAME', 'development'),
+            'port': os.environ.get('PORT', '8000'),
+            'checks': {
+                'static_files': static_accessible,
+                'templates': template_accessible,
+                'flask_app': True
+            },
+            'version': '3.0.0-railway-ready',
+            'server': 'Flask/DeepFake Detection API',
+            'uptime': True
+        }
+        
+        logger.info(f"Health check: {'PASS' if is_healthy else 'FAIL'}")
+        
+        return jsonify(health_data), 200 if is_healthy else 503
+        
+    except Exception as e:
+        logger.error(f"Health check error: {e}")
+        return jsonify({
+            'status': 'error',
+            'message': f'Health check failed: {str(e)}',
+            'timestamp': datetime.now().isoformat()
+        }), 500
 
 if __name__ == '__main__':
     print("\n" + "="*60)
@@ -109,25 +148,36 @@ if __name__ == '__main__':
     print("SERVER STARTING...")
     
     # Get port from environment variable (Railway sets PORT)
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 8000))
     print(f"   Running on port: {port}")
+    print(f"   Environment: {os.environ.get('RAILWAY_ENVIRONMENT_NAME', 'development')}")
     print(f"   Test static files: /static/js/accessibility.js")
     print()
     print("Press Ctrl+C to stop the server")
     print("="*60)
     print()
     
+    # For production deployment (Railway), don't use debug mode
+    is_production = os.environ.get('RAILWAY_ENVIRONMENT_NAME') is not None
+    debug_mode = not is_production
+    
+    print(f"   Debug mode: {debug_mode}")
+    print(f"   Production mode: {is_production}")
+    
     try:
-        # For production deployment (Railway), don't use debug mode
-        debug_mode = os.environ.get('RAILWAY_ENVIRONMENT_NAME') is None
-        app.run(debug=debug_mode, host='0.0.0.0', port=port)
+        app.run(debug=debug_mode, host='0.0.0.0', port=port, threaded=True)
     except Exception as e:
         print(f"Error starting on port {port}: {e}")
-        try:
-            app.run(debug=False, host='0.0.0.0', port=8000)
-        except Exception as e2:
-            print(f"Error starting on port 8000: {e2}")
-            app.run(debug=False, host='0.0.0.0', port=3000)
+        # Fallback ports for Railway
+        fallback_ports = [8080, 3000, 5000]
+        for fallback_port in fallback_ports:
+            try:
+                print(f"Trying fallback port {fallback_port}...")
+                app.run(debug=False, host='0.0.0.0', port=fallback_port, threaded=True)
+                break
+            except Exception as e2:
+                print(f"Error starting on port {fallback_port}: {e2}")
+                continue
 
 
 
